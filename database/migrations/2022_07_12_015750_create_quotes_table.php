@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('quotes', function (Blueprint $table) {
-            $table->foreignId('id')->constrained('characters');
+            $table->id();
+            $table->foreignId('character_id')->constrained('characters');
             $table->text('quote');
             $table->timestamps();
         });
